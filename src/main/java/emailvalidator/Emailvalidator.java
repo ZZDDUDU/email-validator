@@ -9,16 +9,15 @@ public class Emailvalidator {
   }
   public boolean isValid(String email) {
     int x = 0, y = 0;
+   
     for (char ch : email.toCharArray()) {
-      switch (ch) {
-        case '.' :
-          x++;
-          break;
-        case '@' :
-          y++;
-          break;
+    	if(ch=='.'){
+    		x++;
+    	}
+    	else if(ch=='@'){
+    		y++;
       }
-    }
+    } 
     if (y == 1 && x >= 1) {
       return true;
     }
